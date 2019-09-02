@@ -149,7 +149,9 @@ class MenuViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.MonB.text = WeekMenu.getMenu(forDay:"Monday", forMeal: "Breakfast")?.meal ?? ""
+        //let testmenu = WeekMenu.getMenu(forDay: "MON", forMeal: "B")
+        //print("test menu: \(testmenu!.menu)")
+        self.MonB.text = WeekMenu.getMenu(forDay:"MON", forMeal: "B")?.menu ?? ""
         self.MonL.text = WeekMenu.getMenu(forDay:"Monday", forMeal: "Lunch")?.meal ?? ""
         self.MonD.text = WeekMenu.getMenu(forDay:"Monday", forMeal: "Dinner")?.meal ?? ""
         self.TueB.text = WeekMenu.getMenu(forDay:"Tuesday", forMeal: "Breakfast")?.meal ?? ""
@@ -257,91 +259,92 @@ class MenuViewController: UIViewController {
         // Add a "OK" button to the alert. The handler calls addNewToDoItem()
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
             if let Dish = alert.textFields?[0].text {
-            
+                
                 if sender == self.MondB {
-                self.MonB.text = Dish
-                    self.createWeekMenu(sender: sender)
+                    self.MonB.text = Dish
                 }
                 else if sender == self.MondL
                 {
-                self.MonL.text = Dish
+                    self.MonL.text = Dish
                 }
-            else if sender == self.MondD
-            {
-                self.MonD.text = Dish
+                else if sender == self.MondD
+                {
+                    self.MonD.text = Dish
                 }
-            else if sender == self.TuesB
-            {
-                self.TueB.text = Dish
+                else if sender == self.TuesB
+                {
+                    self.TueB.text = Dish
                 }
-            else if sender == self.TuesL
-            {
-                self.TueL.text = Dish
+                else if sender == self.TuesL
+                {
+                    self.TueL.text = Dish
                 }
-            else if sender == self.TuesD
-            {
-                self.TueD.text = Dish
+                else if sender == self.TuesD
+                {
+                    self.TueD.text = Dish
                 }
-            else if sender == self.WedsB
-            {
-                self.WedB.text = Dish
+                else if sender == self.WedsB
+                {
+                    self.WedB.text = Dish
                 }
-            else if sender == self.WedsL
-            {
-                self.WedL.text = Dish
+                else if sender == self.WedsL
+                {
+                    self.WedL.text = Dish
                 }
-            else if sender == self.WedsD
-            {
-                self.WedD.text = Dish
+                else if sender == self.WedsD
+                {
+                    self.WedD.text = Dish
                 }
-            else if sender == self.ThurB
-            {
-                self.ThuB.text = Dish
+                else if sender == self.ThurB
+                {
+                    self.ThuB.text = Dish
                 }
-            else if sender == self.ThurL
-            {
-                self.ThuL.text = Dish
+                else if sender == self.ThurL
+                {
+                    self.ThuL.text = Dish
                 }
-            else if sender == self.ThurD
-            {
-                self.ThuD.text = Dish
+                else if sender == self.ThurD
+                {
+                    self.ThuD.text = Dish
                 }
-            else if sender == self.FridB
-            {
-                self.FriB.text = Dish
+                else if sender == self.FridB
+                {
+                    self.FriB.text = Dish
                 }
-            else if sender == self.FridL
-            {
-                self.FriL.text = Dish
+                else if sender == self.FridL
+                {
+                    self.FriL.text = Dish
                 }
-            else if sender == self.FridD
-            {
-                self.FriD.text = Dish
+                else if sender == self.FridD
+                {
+                    self.FriD.text = Dish
                 }
-            else if sender == self.SatuB
-            {
-                self.SatB.text = Dish
+                else if sender == self.SatuB
+                {
+                    self.SatB.text = Dish
                 }
-            else if sender == self.SatuL
-            {
-                self.SatL.text = Dish
+                else if sender == self.SatuL
+                {
+                    self.SatL.text = Dish
                 }
-            else if sender == self.SatuD
-            {
-                self.SatD.text = Dish
+                else if sender == self.SatuD
+                {
+                    self.SatD.text = Dish
                 }
-            else if sender == self.SundB
-            {
-                self.SunB.text = Dish
+                else if sender == self.SundB
+                {
+                    self.SunB.text = Dish
                 }
-            else if sender == self.SundL
-            {
-                self.SunL.text = Dish
+                else if sender == self.SundL
+                {
+                    self.SunL.text = Dish
                 }
-            else if sender == self.SundD
-            {
-                self.SunD.text = Dish
+                else if sender == self.SundD
+                {
+                    self.SunD.text = Dish
                 }
+                self.createWeekMenu(sender: sender)
+
             }}))
         
         // Present the alert to the user
@@ -354,213 +357,207 @@ class MenuViewController: UIViewController {
     func createWeekMenu(sender: Any?) {
         let mealButton = sender as! UIButton
             if mealButton == self.MondB {
-                // look up weekMenu for MonB
-                // if found update it, if not found create it
-                if let weekMenu = WeekMenu.getMenu(forDay: "MON", forMeal: "B") {
-                    weekMenu.meal = self.MonB.text
-                } else {
-                    let newWeekMenu = WeekMenu.create(forDay: "MON", forMeal: "B")
-                    newWeekMenu.meal = self.MonB.text
-                }
+                let weekMenu = WeekMenu.updateOrCreate(day: "MON", meal: "B")
+                weekMenu.menu = self.MonB.text
             }
               else if mealButton == self.MondL {
                     // look up weekMenu for MonL
                     // if found update it, if not found create it
                     if let weekMenu = WeekMenu.getMenu(forDay: "MON", forMeal: "L") {
-                        weekMenu.meal = self.MonL.text
+                        weekMenu.menu = self.MonL.text
                     } else {
                         let newWeekMenu = WeekMenu.create(forDay: "MON", forMeal: "L")
-                        newWeekMenu.meal = self.MonL.text
+                        newWeekMenu.menu = self.MonL.text
                     }
             }
             else if mealButton == self.MondD {
                 // look up weekMenu for MonD
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "MON", forMeal: "D") {
-                    weekMenu.meal = self.MonD.text
+                    weekMenu.menu = self.MonD.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "MON", forMeal: "D")
-                    newWeekMenu.meal = self.MonD.text
+                    newWeekMenu.menu = self.MonD.text
                 }
             }
             else if mealButton == self.TuesB {
                 // look up weekMenu for TueB
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "TUE", forMeal: "B") {
-                    weekMenu.meal = self.TueB.text
+                    weekMenu.menu = self.TueB.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "TUE", forMeal: "B")
-                    newWeekMenu.meal = self.TueB.text
+                    newWeekMenu.menu = self.TueB.text
                 }
             }
             else if mealButton == self.TuesL {
                 // look up weekMenu for TueL
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "TUE", forMeal: "L") {
-                    weekMenu.meal = self.TueL.text
+                    weekMenu.menu = self.TueL.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "TUE", forMeal: "L")
-                    newWeekMenu.meal = self.TueL.text
+                    newWeekMenu.menu = self.TueL.text
                 }
             }
                 else if mealButton == self.TuesD {
                 // look up weekMenu for TueD
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "TUE", forMeal: "D") {
-                weekMenu.meal = self.TueD.text
+                weekMenu.menu = self.TueD.text
                 } else {
                 let newWeekMenu = WeekMenu.create(forDay: "TUE", forMeal: "D")
-                newWeekMenu.meal = self.TueD.text
+                newWeekMenu.menu = self.TueD.text
                 }
             }
             else if mealButton == self.WedsB {
                 // look up weekMenu for WedB
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "WED", forMeal: "B") {
-                    weekMenu.meal = self.WedB.text
+                    weekMenu.menu = self.WedB.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "WED", forMeal: "B")
-                    newWeekMenu.meal = self.WedB.text
+                    newWeekMenu.menu = self.WedB.text
                 }
             }
             else if mealButton == self.WedsL {
                 // look up weekMenu for WedL
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "WED", forMeal: "L") {
-                    weekMenu.meal = self.WedL.text
+                    weekMenu.menu = self.WedL.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "WED", forMeal: "L")
-                    newWeekMenu.meal = self.WedL.text
+                    newWeekMenu.menu = self.WedL.text
                 }
             }
             else if mealButton == self.WedsD {
                 // look up weekMenu for WedD
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "WED", forMeal: "D") {
-                    weekMenu.meal = self.WedD.text
+                    weekMenu.menu = self.WedD.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "WED", forMeal: "D")
-                    newWeekMenu.meal = self.WedD.text
+                    newWeekMenu.menu = self.WedD.text
                 }
         }
             else if mealButton == self.ThurB {
                 // look up weekMenu for ThuB
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "THU", forMeal: "B") {
-                    weekMenu.meal = self.ThuB.text
+                    weekMenu.menu = self.ThuB.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "THU", forMeal: "B")
-                    newWeekMenu.meal = self.ThuB.text
+                    newWeekMenu.menu = self.ThuB.text
                 }
         }
             else if mealButton == self.ThurL {
                 // look up weekMenu for ThuL
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "THU", forMeal: "L") {
-                    weekMenu.meal = self.ThuL.text
+                    weekMenu.menu = self.ThuL.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "THU", forMeal: "L")
-                    newWeekMenu.meal = self.ThuL.text
+                    newWeekMenu.menu = self.ThuL.text
                 }
         }
             else if mealButton == self.ThurD {
                 // look up weekMenu for ThuD
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "THU", forMeal: "D") {
-                    weekMenu.meal = self.ThuD.text
+                    weekMenu.menu = self.ThuD.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "THU", forMeal: "D")
-                    newWeekMenu.meal = self.ThuD.text
+                    newWeekMenu.menu = self.ThuD.text
                 }
         }
             else if mealButton == self.FridB {
                 // look up weekMenu for FriB
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "FRI", forMeal: "B") {
-                    weekMenu.meal = self.FriB.text
+                    weekMenu.menu = self.FriB.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "FRI", forMeal: "B")
-                    newWeekMenu.meal = self.FriB.text
+                    newWeekMenu.menu = self.FriB.text
                 }
         }
             else if mealButton == self.FridL {
                 // look up weekMenu for FriL
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "FRI", forMeal: "L") {
-                    weekMenu.meal = self.FriL.text
+                    weekMenu.menu = self.FriL.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "FRI", forMeal: "L")
-                    newWeekMenu.meal = self.FriL.text
+                    newWeekMenu.menu = self.FriL.text
                 }
         }
             else if mealButton == self.FridD {
                 // look up weekMenu for FriD
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "FRI", forMeal: "D") {
-                    weekMenu.meal = self.FriD.text
+                    weekMenu.menu = self.FriD.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "FRI", forMeal: "D")
-                    newWeekMenu.meal = self.FriD.text
+                    newWeekMenu.menu = self.FriD.text
                 }
         }
             else if mealButton == self.SatuB {
                 // look up weekMenu for SatB
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "SAT", forMeal: "B") {
-                    weekMenu.meal = self.SatB.text
+                    weekMenu.menu = self.SatB.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "SAT", forMeal: "B")
-                    newWeekMenu.meal = self.SatB.text
+                    newWeekMenu.menu = self.SatB.text
                 }
         }
             else if mealButton == self.SatuL {
                 // look up weekMenu for SatL
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "SAT", forMeal: "L") {
-                    weekMenu.meal = self.SatL.text
+                    weekMenu.menu = self.SatL.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "SAT", forMeal: "L")
-                    newWeekMenu.meal = self.SatL.text
+                    newWeekMenu.menu = self.SatL.text
                 }
         }
             else if mealButton == self.SatuD {
                 // look up weekMenu for SatD
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "SAT", forMeal: "D") {
-                    weekMenu.meal = self.SatD.text
+                    weekMenu.menu = self.SatD.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "SAT", forMeal: "D")
-                    newWeekMenu.meal = self.SatD.text
+                    newWeekMenu.menu = self.SatD.text
                 }
         }
             else if mealButton == self.SundB {
                 // look up weekMenu for SunB
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "SUN", forMeal: "B") {
-                    weekMenu.meal = self.SunB.text
+                    weekMenu.menu = self.SunB.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "SUN", forMeal: "B")
-                    newWeekMenu.meal = self.SunB.text
+                    newWeekMenu.menu = self.SunB.text
                 }
         }
             else if mealButton == self.SundL {
                 // look up weekMenu for SunL
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "SUN", forMeal: "L") {
-                    weekMenu.meal = self.SunL.text
+                    weekMenu.menu = self.SunL.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "SUN", forMeal: "L")
-                    newWeekMenu.meal = self.SunL.text
+                    newWeekMenu.menu = self.SunL.text
                 }
         }
             else if mealButton == self.SundD {
                 // look up weekMenu for SunD
                 // if found update it, if not found create it
                 if let weekMenu = WeekMenu.getMenu(forDay: "SUN", forMeal: "D") {
-                    weekMenu.meal = self.SunD.text
+                    weekMenu.menu = self.SunD.text
                 } else {
                     let newWeekMenu = WeekMenu.create(forDay: "SUN", forMeal: "D")
-                    newWeekMenu.meal = self.SunD.text
+                    newWeekMenu.menu = self.SunD.text
                 }
         }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

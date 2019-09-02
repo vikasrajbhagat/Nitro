@@ -63,6 +63,18 @@ public class WeekMenu: NSManagedObject {
 //        }
         return nil
     }
+    
+    
+    @available(iOS 10.0, *)
+    public static func updateOrCreate(day: String, meal: String) -> WeekMenu {
+        if let weekMenu = WeekMenu.getMenu(forDay: day, forMeal: meal) {
+            return weekMenu
+        } else {
+            let newWeekMenu = WeekMenu.create(forDay: day, forMeal: meal)
+            return newWeekMenu
+        }
+    }
+    
     public required override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         super.init(entity: entity, insertInto: context)
     }
