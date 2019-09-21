@@ -41,12 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04B714C6E68561043A7F94AA /* Pods-NitroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NitroUITests.debug.xcconfig"; path = "Target Support Files/Pods-NitroUITests/Pods-NitroUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		0F7B01BDF5B63E197EAB6B89 /* Pods-Nitro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nitro.release.xcconfig"; path = "Target Support Files/Pods-Nitro/Pods-Nitro.release.xcconfig"; sourceTree = "<group>"; };
-		3199E3E7976580DBA9A034AA /* Pods-NitroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NitroTests.release.xcconfig"; path = "Target Support Files/Pods-NitroTests/Pods-NitroTests.release.xcconfig"; sourceTree = "<group>"; };
-		3CE19C0B5748D962B45CF133 /* Pods-NitroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NitroUITests.release.xcconfig"; path = "Target Support Files/Pods-NitroUITests/Pods-NitroUITests.release.xcconfig"; sourceTree = "<group>"; };
 		73FA56AFC064AE11E1D5C1B0 /* Pods_NitroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NitroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7680E64B914B170BBC8C24F6 /* Pods-NitroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NitroTests.debug.xcconfig"; path = "Target Support Files/Pods-NitroTests/Pods-NitroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D14889322419D6000596C2A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8D5868EC22384FB9009DF077 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
 		8D8A045A2228854000C283A2 /* Nitro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nitro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +64,6 @@
 		8DE4EE4F226FC9BE00114EA3 /* WeekMenu+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekMenu+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		924EFEE79402789DA8CB5E09 /* Pods_Nitro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nitro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F3E923F7103DD5C45F5171 /* Pods_NitroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NitroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E473833C4E5FDCB68C7D8DE7 /* Pods-Nitro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nitro.debug.xcconfig"; path = "Target Support Files/Pods-Nitro/Pods-Nitro.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,19 +92,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0101E664C55632C6763260FE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E473833C4E5FDCB68C7D8DE7 /* Pods-Nitro.debug.xcconfig */,
-				0F7B01BDF5B63E197EAB6B89 /* Pods-Nitro.release.xcconfig */,
-				7680E64B914B170BBC8C24F6 /* Pods-NitroTests.debug.xcconfig */,
-				3199E3E7976580DBA9A034AA /* Pods-NitroTests.release.xcconfig */,
-				04B714C6E68561043A7F94AA /* Pods-NitroUITests.debug.xcconfig */,
-				3CE19C0B5748D962B45CF133 /* Pods-NitroUITests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		8D8A04512228854000C283A2 = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +100,6 @@
 				8D8A047F2228854100C283A2 /* NitroUITests */,
 				8D8A045B2228854000C283A2 /* Products */,
 				DCE017CC20FABA4C168B4F57 /* Frameworks */,
-				0101E664C55632C6763260FE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -271,7 +251,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8D8A04552228854000C283A2 /* Build configuration list for PBXProject "Nitro" */;
+			buildConfigurationList = 8D8A04552228854000C283A2 /* Build configuration list for PBXProject "Nitro 2" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -701,7 +681,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8D8A04552228854000C283A2 /* Build configuration list for PBXProject "Nitro" */ = {
+		8D8A04552228854000C283A2 /* Build configuration list for PBXProject "Nitro 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D8A04832228854100C283A2 /* Debug */,

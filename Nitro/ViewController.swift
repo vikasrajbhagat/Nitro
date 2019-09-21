@@ -152,12 +152,14 @@ class ViewController: UIViewController {
         
         CurrentDate.text = dateFormatter.string(from: NSDate() as Date)
         CurrentTime.text = timeFormatter.string(from: NSDate() as Date)
-            let myCalendar = Calendar (identifier: .gregorian)
-            let weekDay = myCalendar.component(.weekdayOrdinal, from: Date())
-            let dayname = Calendar.current.weekdaySymbols[weekDay]
-            BreakfastDisplay.text = WeekMenu.getMenu(forDay: dayname, forMeal: "Breakfast")?.menu ?? ""
-            LunchDisplay.text = WeekMenu.getMenu(forDay: dayname, forMeal: "Lunch")?.menu ?? ""
-            DinnerDisplay.text = WeekMenu.getMenu(forDay: dayname, forMeal: "Dinner")?.menu ?? ""
+ //           let myCalendar = Calendar (identifier: .iso8601)
+//            let weekDay = myCalendar.component(.weekdayOrdinal, from: Date())
+//            let dayname = Calendar.current.weekdaySymbols[weekDay]
+              let weekDay = Calendar.current.component(.weekday, from: Date())
+              let dayname = Calendar.current.weekdaySymbols[weekDay]
+            BreakfastDisplay.text = WeekMenu.getMenu(forDay: dayname, forMeal: "B")?.menu ?? ""
+            LunchDisplay.text = WeekMenu.getMenu(forDay: dayname, forMeal: "L")?.menu ?? ""
+            DinnerDisplay.text = WeekMenu.getMenu(forDay: dayname, forMeal: "D")?.menu ?? ""
             
     }
     

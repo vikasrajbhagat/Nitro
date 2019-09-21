@@ -152,26 +152,26 @@ class MenuViewController: UIViewController {
         //let testmenu = WeekMenu.getMenu(forDay: "MON", forMeal: "B")
         //print("test menu: \(testmenu!.menu)")
         self.MonB.text = WeekMenu.getMenu(forDay:"MON", forMeal: "B")?.menu ?? ""
-        self.MonL.text = WeekMenu.getMenu(forDay:"Monday", forMeal: "Lunch")?.meal ?? ""
-        self.MonD.text = WeekMenu.getMenu(forDay:"Monday", forMeal: "Dinner")?.meal ?? ""
-        self.TueB.text = WeekMenu.getMenu(forDay:"Tuesday", forMeal: "Breakfast")?.meal ?? ""
-        self.TueL.text = WeekMenu.getMenu(forDay:"Tuesday", forMeal: "Lunch")?.meal ?? ""
-        self.TueD.text = WeekMenu.getMenu(forDay:"Tuesday", forMeal: "Dinner")?.meal ?? ""
-        self.WedB.text = WeekMenu.getMenu(forDay:"Wednesday", forMeal: "Breakfast")?.meal ?? ""
-        self.WedL.text = WeekMenu.getMenu(forDay:"Wednesday", forMeal: "Lunch")?.meal ?? ""
-        self.WedD.text = WeekMenu.getMenu(forDay:"Wednesday", forMeal: "Dinner")?.meal ?? ""
-        self.ThuB.text = WeekMenu.getMenu(forDay:"Thursday", forMeal: "Breakfast")?.meal ?? ""
-        self.ThuL.text = WeekMenu.getMenu(forDay:"Thursday", forMeal: "Lunch")?.meal ?? ""
-        self.ThuD.text = WeekMenu.getMenu(forDay:"Thursday", forMeal: "Dinner")?.meal ?? ""
-        self.FriB.text = WeekMenu.getMenu(forDay:"Friday", forMeal: "Breakfast")?.meal ?? ""
-        self.FriL.text = WeekMenu.getMenu(forDay:"Friday", forMeal: "Lunch")?.meal ?? ""
-        self.FriD.text = WeekMenu.getMenu(forDay:"Friday", forMeal: "Dinner")?.meal ?? ""
-        self.SatB.text = WeekMenu.getMenu(forDay:"Saturday", forMeal: "Breakfast")?.meal ?? ""
-        self.SatL.text = WeekMenu.getMenu(forDay:"Saturday", forMeal: "Lunch")?.meal ?? ""
-        self.SatD.text = WeekMenu.getMenu(forDay:"Saturday", forMeal: "Dinner")?.meal ?? ""
-        self.SunB.text = WeekMenu.getMenu(forDay:"Sunday", forMeal: "Breakfast")?.meal ?? ""
-        self.SunL.text = WeekMenu.getMenu(forDay:"Sunday", forMeal: "Lunch")?.meal ?? ""
-        self.SunD.text = WeekMenu.getMenu(forDay:"Sunday", forMeal: "Dinner")?.meal ?? ""
+        self.MonL.text = WeekMenu.getMenu(forDay:"MON", forMeal: "L")?.menu ?? ""
+        self.MonD.text = WeekMenu.getMenu(forDay:"MON", forMeal: "D")?.menu ?? ""
+        self.TueB.text = WeekMenu.getMenu(forDay:"TUE", forMeal: "B")?.menu ?? ""
+        self.TueL.text = WeekMenu.getMenu(forDay:"TUE", forMeal: "L")?.menu ?? ""
+        self.TueD.text = WeekMenu.getMenu(forDay:"TUE", forMeal: "D")?.menu ?? ""
+        self.WedB.text = WeekMenu.getMenu(forDay:"WED", forMeal: "B")?.menu ?? ""
+        self.WedL.text = WeekMenu.getMenu(forDay:"WED", forMeal: "L")?.menu ?? ""
+        self.WedD.text = WeekMenu.getMenu(forDay:"WED", forMeal: "D")?.menu ?? ""
+        self.ThuB.text = WeekMenu.getMenu(forDay:"THU", forMeal: "B")?.menu ?? ""
+        self.ThuL.text = WeekMenu.getMenu(forDay:"THU", forMeal: "L")?.menu ?? ""
+        self.ThuD.text = WeekMenu.getMenu(forDay:"THU", forMeal: "D")?.menu ?? ""
+        self.FriB.text = WeekMenu.getMenu(forDay:"FRI", forMeal: "B")?.menu ?? ""
+        self.FriL.text = WeekMenu.getMenu(forDay:"FRI", forMeal: "L")?.menu ?? ""
+        self.FriD.text = WeekMenu.getMenu(forDay:"FRI", forMeal: "D")?.menu ?? ""
+        self.SatB.text = WeekMenu.getMenu(forDay:"SAT", forMeal: "B")?.menu ?? ""
+        self.SatL.text = WeekMenu.getMenu(forDay:"SAT", forMeal: "L")?.menu ?? ""
+        self.SatD.text = WeekMenu.getMenu(forDay:"SAT", forMeal: "D")?.menu ?? ""
+        self.SunB.text = WeekMenu.getMenu(forDay:"SUN", forMeal: "B")?.menu ?? ""
+        self.SunL.text = WeekMenu.getMenu(forDay:"SUN", forMeal: "L")?.menu ?? ""
+        self.SunD.text = WeekMenu.getMenu(forDay:"SUN", forMeal: "D")?.menu ?? ""
         
     }
     
@@ -567,32 +567,4 @@ class MenuViewController: UIViewController {
     }
 }
 
-//@available(iOS 10.0, *)
-//func retrieveWeeklyMenu() -> WeekMenu? {
-//
-//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//
-//    let managedContext = appDelegate.persistentContainer.viewContext
-//
-//    let fetchRequest = NSFetchRequest<WeekMenu>(entityName: "WeekMenu")
-//    var menus: [WeekMenu]
-//    do
-//    {
-//       menus = try managedContext.fetch(fetchRequest)
-//        if menus.isEmpty {
-//            return nil
-//        }
-//        else if menus.count == 1 {
-//            return menus.first
-//        }
-//        else {
-//            print ("More than 1 menu item")
-//            return nil
-//        }
-//    }
-//    catch {
-//        print("Unable to fetch Data")
-//    }
-//    return nil
-//}
-//
+
