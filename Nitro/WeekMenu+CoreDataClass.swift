@@ -58,9 +58,7 @@ public class WeekMenu: NSManagedObject {
         }
             return selectedItem
         }
-//        } else {
-//            // Fallback on earlier versions
-//        }
+
         return nil
     }
     

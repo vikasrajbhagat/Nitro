@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Friday" representedClassName="Friday" syncable="YES" codeGenerationType="class">
+        <attribute name="breakfast" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dinner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lunch" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Monday" representedClassName="Monday" syncable="YES" codeGenerationType="class">
+        <attribute name="breakfast" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dinner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lunch" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Saturday" representedClassName="Saturday" syncable="YES" codeGenerationType="class">
+        <attribute name="breakfast" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dinner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lunch" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Sunday" representedClassName="Sunday" syncable="YES" codeGenerationType="class">
+        <attribute name="breakfast" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dinner" optional="YES" syncable="YES"/>
+        <attribute name="lunch" optional="YES" syncable="YES"/>
+    </entity>
+    <entity name="Thursday" representedClassName="Thursday" syncable="YES" codeGenerationType="class">
+        <attribute name="breakfast" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dinner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lunch" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Tuesday" representedClassName="Tuesday" syncable="YES" codeGenerationType="class">
+        <attribute name="breakfast" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dinner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lunch" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Wednesday" representedClassName="Wednesday" syncable="YES" codeGenerationType="class">
+        <attribute name="breakfast" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dinner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lunch" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Monday" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Tuesday" positionX="-54" positionY="72" width="128" height="88"/>
+        <element name="Wednesday" positionX="-45" positionY="36" width="128" height="90"/>
+        <element name="Thursday" positionX="-36" positionY="45" width="128" height="90"/>
+        <element name="Friday" positionX="-18" positionY="54" width="128" height="90"/>
+        <element name="Saturday" positionX="0" positionY="63" width="128" height="90"/>
+        <element name="Sunday" positionX="18" positionY="72" width="128" height="90"/>
+    </elements>
+</model>

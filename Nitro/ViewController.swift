@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import CoreLocation
 
 
 
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
-        
+
         
         // Define URL for Weather Data
         URLSession.shared.dataTask(with: URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=51.05011&lon=-114.08529&appid=b44e7ea56a79630c29ac283f025501e6&units=metric")!) { data, response, error in
@@ -152,14 +153,13 @@ class ViewController: UIViewController {
         
         CurrentDate.text = dateFormatter.string(from: NSDate() as Date)
         CurrentTime.text = timeFormatter.string(from: NSDate() as Date)
- //           let myCalendar = Calendar (identifier: .iso8601)
-//            let weekDay = myCalendar.component(.weekdayOrdinal, from: Date())
-//            let dayname = Calendar.current.weekdaySymbols[weekDay]
-              let weekDay = Calendar.current.component(.weekday, from: Date())
-              let dayname = Calendar.current.weekdaySymbols[weekDay]
-            BreakfastDisplay.text = WeekMenu.getMenu(forDay: dayname, forMeal: "B")?.menu ?? ""
-            LunchDisplay.text = WeekMenu.getMenu(forDay: dayname, forMeal: "L")?.menu ?? ""
-            DinnerDisplay.text = WeekMenu.getMenu(forDay: dayname, forMeal: "D")?.menu ?? ""
+            let format = DateFormatter()
+            format.dateFormat = "EEE"
+            let daysname = format.string(from: Date())
+            let dayname = daysname.uppercased
+            BreakfastDisplay.text = WeekMenu.getMenu(forDay: dayname(), forMeal: "B")?.menu ?? ""
+            LunchDisplay.text = WeekMenu.getMenu(forDay: dayname(), forMeal: "L")?.menu ?? ""
+            DinnerDisplay.text = WeekMenu.getMenu(forDay: dayname(), forMeal: "D")?.menu ?? ""
             
     }
     
