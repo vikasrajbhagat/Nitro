@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3075A1B5DE1EB7722887339C /* Pods_NitroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73FA56AFC064AE11E1D5C1B0 /* Pods_NitroTests.framework */; };
 		8D14889422419D6000596C2A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D14889322419D6000596C2A /* MenuViewController.swift */; };
 		8D8A045E2228854000C283A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A045D2228854000C283A2 /* AppDelegate.swift */; };
 		8D8A04602228854000C283A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A045F2228854000C283A2 /* ViewController.swift */; };
@@ -42,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		73FA56AFC064AE11E1D5C1B0 /* Pods_NitroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NitroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D14889322419D6000596C2A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8D5868EC22384FB9009DF077 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
 		8D8A045A2228854000C283A2 /* Nitro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nitro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,8 +61,6 @@
 		8DDFB29D224EF18B00FAE821 /* DataNitro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataNitro.xcdatamodel; sourceTree = "<group>"; };
 		8DE4EE4E226FC9BE00114EA3 /* WeekMenu+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekMenu+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8DE4EE4F226FC9BE00114EA3 /* WeekMenu+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekMenu+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		924EFEE79402789DA8CB5E09 /* Pods_Nitro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nitro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93F3E923F7103DD5C45F5171 /* Pods_NitroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NitroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7864A8C233AF03200AF11DF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3075A1B5DE1EB7722887339C /* Pods_NitroTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,9 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				8D5868EC22384FB9009DF077 /* Network.framework */,
-				924EFEE79402789DA8CB5E09 /* Pods_Nitro.framework */,
-				73FA56AFC064AE11E1D5C1B0 /* Pods_NitroTests.framework */,
-				93F3E923F7103DD5C45F5171 /* Pods_NitroUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,7 +163,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D8A04852228854100C283A2 /* Build configuration list for PBXNativeTarget "Nitro" */;
 			buildPhases = (
-				A5F6E79594A68D3DD61AC5F5 /* [CP] Check Pods Manifest.lock */,
 				8D8A04562228854000C283A2 /* Sources */,
 				8D8A04572228854000C283A2 /* Frameworks */,
 				8D8A04582228854000C283A2 /* Resources */,
@@ -189,7 +180,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D8A04882228854100C283A2 /* Build configuration list for PBXNativeTarget "NitroTests" */;
 			buildPhases = (
-				81FE85849AF12BA836361E6B /* [CP] Check Pods Manifest.lock */,
 				8D8A046D2228854100C283A2 /* Sources */,
 				8D8A046E2228854100C283A2 /* Frameworks */,
 				8D8A046F2228854100C283A2 /* Resources */,
@@ -208,7 +198,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D8A048B2228854100C283A2 /* Build configuration list for PBXNativeTarget "NitroUITests" */;
 			buildPhases = (
-				1A1EEC486EB73E0B4D5F3FCB /* [CP] Check Pods Manifest.lock */,
 				8D8A04782228854100C283A2 /* Sources */,
 				8D8A04792228854100C283A2 /* Frameworks */,
 				8D8A047A2228854100C283A2 /* Resources */,
@@ -301,75 +290,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1A1EEC486EB73E0B4D5F3FCB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NitroUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "
-";
-			showEnvVarsInLog = 0;
-		};
-		81FE85849AF12BA836361E6B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NitroTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A5F6E79594A68D3DD61AC5F5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Nitro-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "
-";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D8A04562228854000C283A2 /* Sources */ = {
