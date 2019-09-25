@@ -21,6 +21,7 @@
 		8DDFB29E224EF18B00FAE821 /* DataNitro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DDFB29C224EF18B00FAE821 /* DataNitro.xcdatamodeld */; };
 		8DE4EE50226FC9BE00114EA3 /* WeekMenu+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4EE4E226FC9BE00114EA3 /* WeekMenu+CoreDataClass.swift */; };
 		8DE4EE51226FC9BE00114EA3 /* WeekMenu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4EE4F226FC9BE00114EA3 /* WeekMenu+CoreDataProperties.swift */; };
+		F7864A8D233AF03200AF11DF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F7864A8C233AF03200AF11DF /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		8DE4EE4F226FC9BE00114EA3 /* WeekMenu+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekMenu+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		924EFEE79402789DA8CB5E09 /* Pods_Nitro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nitro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F3E923F7103DD5C45F5171 /* Pods_NitroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NitroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7864A8C233AF03200AF11DF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		8D8A04512228854000C283A2 = {
 			isa = PBXGroup;
 			children = (
+				F7864A8C233AF03200AF11DF /* .gitignore */,
 				8D8A045C2228854000C283A2 /* Nitro */,
 				8D8A04742228854100C283A2 /* NitroTests */,
 				8D8A047F2228854100C283A2 /* NitroUITests */,
@@ -251,7 +254,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8D8A04552228854000C283A2 /* Build configuration list for PBXProject "Nitro 2" */;
+			buildConfigurationList = 8D8A04552228854000C283A2 /* Build configuration list for PBXProject "Nitro" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -276,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7864A8D233AF03200AF11DF /* .gitignore in Resources */,
 				8D8A046B2228854100C283A2 /* LaunchScreen.storyboard in Resources */,
 				8D8A04682228854100C283A2 /* Assets.xcassets in Resources */,
 				8D8A04632228854000C283A2 /* Main.storyboard in Resources */,
@@ -681,7 +685,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8D8A04552228854000C283A2 /* Build configuration list for PBXProject "Nitro 2" */ = {
+		8D8A04552228854000C283A2 /* Build configuration list for PBXProject "Nitro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D8A04832228854100C283A2 /* Debug */,
