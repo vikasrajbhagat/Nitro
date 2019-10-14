@@ -240,7 +240,7 @@ class MenuViewController: UIViewController {
     }
     
     
-    @objc func ButtonTapped(_ sender: UIButton)
+   func ButtonTapped(_ sender: UIButton)
     {
         
         
@@ -560,8 +560,7 @@ class MenuViewController: UIViewController {
                     newWeekMenu.menu = self.SunD.text
                 }
         }
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
+        let context = CoreDataStack.managedObjectContext
 
         try! context.save()
     }

@@ -151,7 +151,6 @@ class DRTableViewController: UITableViewController {
         }
     }
     
-    @objc
     public func applicationDidEnterBackground(_ notification: NSNotification)
     {
         do

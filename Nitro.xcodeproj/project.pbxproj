@@ -19,8 +19,9 @@
 		8DA43F3B2228A8EB000E5EF5 /* DRTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA43F3A2228A8EB000E5EF5 /* DRTableViewController.swift */; };
 		8DDFB29E224EF18B00FAE821 /* DataNitro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DDFB29C224EF18B00FAE821 /* DataNitro.xcdatamodeld */; };
 		8DE4EE50226FC9BE00114EA3 /* WeekMenu+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4EE4E226FC9BE00114EA3 /* WeekMenu+CoreDataClass.swift */; };
-		8DE4EE51226FC9BE00114EA3 /* WeekMenu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4EE4F226FC9BE00114EA3 /* WeekMenu+CoreDataProperties.swift */; };
+		F73BAC1B2353B8DA00A9CCE2 /* WeekMenu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BAC1A2353B8DA00A9CCE2 /* WeekMenu+CoreDataProperties.swift */; };
 		F7864A8D233AF03200AF11DF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F7864A8C233AF03200AF11DF /* .gitignore */; };
+		F7B908D32353A4DF00BC0AD1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B908D22353A4DF00BC0AD1 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +61,9 @@
 		8DA43F3A2228A8EB000E5EF5 /* DRTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRTableViewController.swift; sourceTree = "<group>"; };
 		8DDFB29D224EF18B00FAE821 /* DataNitro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataNitro.xcdatamodel; sourceTree = "<group>"; };
 		8DE4EE4E226FC9BE00114EA3 /* WeekMenu+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekMenu+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8DE4EE4F226FC9BE00114EA3 /* WeekMenu+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekMenu+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F73BAC1A2353B8DA00A9CCE2 /* WeekMenu+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekMenu+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F7864A8C233AF03200AF11DF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F7B908D22353A4DF00BC0AD1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				8DE4EE4E226FC9BE00114EA3 /* WeekMenu+CoreDataClass.swift */,
-				8DE4EE4F226FC9BE00114EA3 /* WeekMenu+CoreDataProperties.swift */,
+				F73BAC1A2353B8DA00A9CCE2 /* WeekMenu+CoreDataProperties.swift */,
 				8D14889322419D6000596C2A /* MenuViewController.swift */,
 				8DA43F3A2228A8EB000E5EF5 /* DRTableViewController.swift */,
 				8DA43F3822289A74000E5EF5 /* DRToDo.swift */,
@@ -126,6 +128,7 @@
 				8D8A04692228854100C283A2 /* LaunchScreen.storyboard */,
 				8DDFB29C224EF18B00FAE821 /* DataNitro.xcdatamodeld */,
 				8D8A046C2228854100C283A2 /* Info.plist */,
+				F7B908D22353A4DF00BC0AD1 /* CoreDataStack.swift */,
 			);
 			path = Nitro;
 			sourceTree = "<group>";
@@ -296,9 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DE4EE51226FC9BE00114EA3 /* WeekMenu+CoreDataProperties.swift in Sources */,
+				F73BAC1B2353B8DA00A9CCE2 /* WeekMenu+CoreDataProperties.swift in Sources */,
 				8D14889422419D6000596C2A /* MenuViewController.swift in Sources */,
 				8D8A04602228854000C283A2 /* ViewController.swift in Sources */,
+				F7B908D32353A4DF00BC0AD1 /* CoreDataStack.swift in Sources */,
 				8D8A045E2228854000C283A2 /* AppDelegate.swift in Sources */,
 				8DA43F3922289A74000E5EF5 /* DRToDo.swift in Sources */,
 				8DDFB29E224EF18B00FAE821 /* DataNitro.xcdatamodeld in Sources */,
@@ -392,7 +396,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -409,13 +413,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -464,12 +469,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -480,7 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54NF94XMQG;
+				DEVELOPMENT_TEAM = 5QW9XXHLDL;
 				INFOPLIST_FILE = Nitro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -501,7 +507,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54NF94XMQG;
+				DEVELOPMENT_TEAM = 5QW9XXHLDL;
 				INFOPLIST_FILE = Nitro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (

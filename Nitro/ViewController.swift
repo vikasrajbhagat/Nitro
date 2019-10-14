@@ -135,7 +135,6 @@ class ViewController: UIViewController {
         }
         
     
-    
     //Hide the Navigation Bar on the main screen
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -143,7 +142,9 @@ class ViewController: UIViewController {
         // Hide the navigation bar for current view controller
         self.navigationController?.isNavigationBarHidden = true;
     }
-        @objc func UpdateTimer() {
+    
+    
+    @objc func UpdateTimer() {
         let dateFormatter = DateFormatter()
         let timeFormatter = DateFormatter()
         
@@ -153,16 +154,13 @@ class ViewController: UIViewController {
         
         CurrentDate.text = dateFormatter.string(from: NSDate() as Date)
         CurrentTime.text = timeFormatter.string(from: NSDate() as Date)
-            let format = DateFormatter()
-            format.dateFormat = "EEE"
-            let daysname = format.string(from: Date())
-            let dayname = daysname.uppercased
-            BreakfastDisplay.text = WeekMenu.getMenu(forDay: dayname(), forMeal: "B")?.menu ?? ""
-            LunchDisplay.text = WeekMenu.getMenu(forDay: dayname(), forMeal: "L")?.menu ?? ""
-            DinnerDisplay.text = WeekMenu.getMenu(forDay: dayname(), forMeal: "D")?.menu ?? ""
-            
+        let format = DateFormatter()
+        format.dateFormat = "EEE"
+        let daysname = format.string(from: Date())
+        let dayname = daysname.uppercased
+        BreakfastDisplay.text = WeekMenu.getMenu(forDay: dayname(), forMeal: "B")?.menu ?? ""
+        LunchDisplay.text = WeekMenu.getMenu(forDay: dayname(), forMeal: "L")?.menu ?? ""
+        DinnerDisplay.text = WeekMenu.getMenu(forDay: dayname(), forMeal: "D")?.menu ?? ""
+        
     }
-    
-  
-
 }

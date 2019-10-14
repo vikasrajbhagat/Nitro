@@ -2,7 +2,7 @@
 //  WeekMenu+CoreDataProperties.swift
 //  Nitro
 //
-//  Created by Vikas Raj Bhagat on 2019-04-23.
+//  Created by Elizabeth Schulze on 2019-10-13.
 //  Copyright © 2019 Vikas Raj Bhagat. All rights reserved.
 //
 //

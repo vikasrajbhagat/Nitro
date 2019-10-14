@@ -11,14 +11,11 @@ import Foundation
 import CoreData
 import UIKit
 
-@objc(WeekMenu)
 public class WeekMenu: NSManagedObject {
     
-    @available(iOS 10.0, *)
     public static func create(forDay: String, forMeal: String) -> WeekMenu {
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let vContext = appDelegate.persistentContainer.viewContext
+        let vContext = CoreDataStack.managedObjectContext
         guard let entity = NSEntityDescription.entity(forEntityName: "WeekMenu", in: vContext) else { fatalError() }
         let weekMenu = self.init(entity: entity, insertInto: vContext)
         weekMenu.day = forDay
@@ -36,9 +33,7 @@ public class WeekMenu: NSManagedObject {
 
     // MARK: - get from local store
     static func getMenu(forDay: String, forMeal: String) -> WeekMenu? {
-        if #available(iOS 10.0, *) {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
+        let context = CoreDataStack.managedObjectContext
         
         let predicate = NSPredicate(format: "(%K == %@ AND %K == %@)", "day", forDay, "meal", forMeal)
         let request: NSFetchRequest<WeekMenu> = WeekMenu.fetchRequest()
@@ -56,14 +51,9 @@ public class WeekMenu: NSManagedObject {
         } catch {
             print("Error fetching Week Menu from context: \(error)")
         }
-            return selectedItem
-        }
-
-        return nil
+        return selectedItem
     }
     
-    
-    @available(iOS 10.0, *)
     public static func updateOrCreate(day: String, meal: String) -> WeekMenu {
         if let weekMenu = WeekMenu.getMenu(forDay: day, forMeal: meal) {
             return weekMenu
