@@ -10,10 +10,10 @@ import UIKit
 import Foundation
 import CoreLocation
 
-
-
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     var timer = Timer()
+    var locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
     
     //Variables from Storyboard
     @IBOutlet weak var CurrentTime: UILabel!
@@ -42,9 +42,33 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
 
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
         
+        self.configureView()
+                
+        }
+        
+    
+    //Hide the Navigation Bar on the main screen
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide the navigation bar for current view controller
+        self.navigationController?.isNavigationBarHidden = true;
+    }
+    
+    func configureView() {
+        var latitude = 51.05011
+        var longitude = -114.08529
+        if self.currentLocation != nil {
+            latitude = self.currentLocation.coordinate.latitude
+            longitude = self.currentLocation.coordinate.longitude
+        }
         // Define URL for Weather Data
-        URLSession.shared.dataTask(with: URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=51.05011&lon=-114.08529&appid=b44e7ea56a79630c29ac283f025501e6&units=metric")!) { data, response, error in
+        URLSession.shared.dataTask(with: URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=b44e7ea56a79630c29ac283f025501e6&units=metric")!) { data, response, error in
             if let error = error {
                 print("Error:\n\(error)")
             } else {
@@ -66,37 +90,37 @@ class ViewController: UIViewController {
                     }
                     if let Temp2 = JSon["main"]as? NSDictionary {
                         DispatchQueue.main.async {
-                                self.Temp.text = "\(String(Temp2["temp"] as! Double))°C"
+                            self.Temp.text = "\(String(Temp2["temp"] as! Double))°C"
                             self.Humidity.text = "Humidity  \(String(Temp2["humidity"] as! Double))%"
                             self.TempMax.text = "Max: \(String(Temp2["temp_max"] as! Double))°C"
                             self.TempMin.text = "Min: \(String(Temp2["temp_min"] as! Double))°C"
+                        }
                     }
-                }
                     if let Temp3 = JSon["sys"]as? NSDictionary {
-                    DispatchQueue.main.async {
-//                   All the Code for SunRise and Sunset to be readable to humans
-                        let sunrise = (Temp3["sunrise"] as! UInt64)
-                        let sunriseDate = Date(timeIntervalSince1970: TimeInterval(sunrise))
-                        let formatter1 = DateFormatter()
-                        formatter1.dateStyle = .none
-                        formatter1.timeStyle = .medium
-                        let formattedTime1 = formatter1.string(from: sunriseDate)
-                        self.SunRise.text = "Sunrise Time \(formattedTime1) "
-                        
-                        let sunset = (Temp3["sunset"] as! UInt64)
-                        let sunsetDate = Date(timeIntervalSince1970: TimeInterval(sunset))
-                        let formatter2 = DateFormatter()
-                        formatter2.dateStyle = .none
-                        formatter2.timeStyle = .medium
-                        let formattedTime2 = formatter2.string(from: sunsetDate)
-                        self.SunSet.text = "Sunset Time \(formattedTime2) "
-                        
+                        DispatchQueue.main.async {
+                            //                   All the Code for SunRise and Sunset to be readable to humans
+                            let sunrise = (Temp3["sunrise"] as! UInt64)
+                            let sunriseDate = Date(timeIntervalSince1970: TimeInterval(sunrise))
+                            let formatter1 = DateFormatter()
+                            formatter1.dateStyle = .none
+                            formatter1.timeStyle = .medium
+                            let formattedTime1 = formatter1.string(from: sunriseDate)
+                            self.SunRise.text = "Sunrise Time \(formattedTime1) "
+                            
+                            let sunset = (Temp3["sunset"] as! UInt64)
+                            let sunsetDate = Date(timeIntervalSince1970: TimeInterval(sunset))
+                            let formatter2 = DateFormatter()
+                            formatter2.dateStyle = .none
+                            formatter2.timeStyle = .medium
+                            let formattedTime2 = formatter2.string(from: sunsetDate)
+                            self.SunSet.text = "Sunset Time \(formattedTime2) "
+                            
                         }
                     }
                     if let Temp4 = JSon["name"] as? NSDictionary {
                         DispatchQueue.main.async {
                             self.City.text = "City: \(Temp4["name"] as! String)"
-                           
+                            
                         }
                     }
                     if let Temp5 = JSon["wind"] as? NSDictionary {
@@ -123,26 +147,16 @@ class ViewController: UIViewController {
                             else if Int(326.25) < Direct, Direct < Int(348.75) { self.Direction.text = "Direction:  \(Direct)° NNW" }
                         }
                     }
-
-
+                    
+                    
                 } catch let jsonError as NSError {
                     print("JSON error:\n\(jsonError.description)")
                 }
             }
-            }.resume()
-
-       
-        }
+        }.resume()
         
-    
-    //Hide the Navigation Bar on the main screen
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        // Hide the navigation bar for current view controller
-        self.navigationController?.isNavigationBarHidden = true;
     }
-    
     
     @objc func UpdateTimer() {
         let dateFormatter = DateFormatter()
@@ -163,4 +177,17 @@ class ViewController: UIViewController {
         DinnerDisplay.text = WeekMenu.getMenu(forDay: dayname(), forMeal: "D")?.menu ?? ""
         
     }
+    
+    // Mark: CLLocationManager delegate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
+        self.currentLocation = locations[0]
+        self.configureView()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error: " + error.localizedDescription)
+    }
+    
+    
 }
