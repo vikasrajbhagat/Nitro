@@ -68,7 +68,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             longitude = self.currentLocation.coordinate.longitude
         }
         // Define URL for Weather Data
-        URLSession.shared.dataTask(with: URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=b44e7ea56a79630c29ac283f025501e6&units=metric")!) { data, response, error in
+        URLSession.shared.dataTask(with: URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=<APPIF From OpenWeather.com>&units=metric")!) { data, response, error in
             if let error = error {
                 print("Error:\n\(error)")
             } else {
